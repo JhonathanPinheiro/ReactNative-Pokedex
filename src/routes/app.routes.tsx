@@ -5,12 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Welcome } from "../pages/Welcome";
 import { Home } from "../pages/Home";
 
-export type RootStackParamList = {
-  Main: undefined;
-  Home: undefined;
-};
-
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator();
 
 export function AppRoutes() {
   return (
