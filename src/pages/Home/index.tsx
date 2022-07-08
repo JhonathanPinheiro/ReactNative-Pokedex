@@ -5,6 +5,7 @@ import api from "../../service/api";
 import { Pokemon } from "../../@types/pokemon";
 
 import * as S from "./styles";
+import FadeAnimation from "../../components/atoms/FadeAnimation";
 
 type Request = {
   id: number;
@@ -52,7 +53,11 @@ export function Home() {
       <FlatList
         data={pokemons}
         keyExtractor={(pokemon) => pokemon.id.toString()}
-        renderItem={({ item: pokemon }) => <Card data={pokemon} />}
+        renderItem={({ item: pokemon }) => (
+          <FadeAnimation>
+            <Card data={pokemon} />
+          </FadeAnimation>
+        )}
       />
     </S.Container>
   );
